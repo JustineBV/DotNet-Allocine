@@ -8,6 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Image Source="http://www.business-actor.com/wpcontent/uploads/2013/07/logo-allocine.png" ></Image>
+        <Image Source="http://www.business-actor.com/wp-content/uploads/2013/07/logo-allocine.png"></Image>
+        
     </Grid>
 </Page>
