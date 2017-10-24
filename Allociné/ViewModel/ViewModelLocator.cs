@@ -21,8 +21,8 @@ namespace Allociné.ViewModel
             {
                 ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
                 SimpleIoc.Default.Register<CompteViewModel>();
-            SimpleIoc.Default.Register<CreateCompteViewModel>();
-        }
+                SimpleIoc.Default.Register<CreateCompteViewModel>();
+            }
 
         
             /// <summary>         
@@ -31,7 +31,7 @@ namespace Allociné.ViewModel
             /// For each new page we need to add this line which made link between the view and the modelview.
             public CompteViewModel Compte => ServiceLocator.Current.GetInstance<CompteViewModel>();
       
-            public CompteViewModel CreateCompte => ServiceLocator.Current.GetInstance<CreateCompteViewModel>();
+            public CreateCompteViewModel CreateCompte => ServiceLocator.Current.GetInstance<CreateCompteViewModel>();
 
     }
 }

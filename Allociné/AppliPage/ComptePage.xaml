@@ -13,12 +13,12 @@
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20">
         <TextBlock Name="Description" Foreground="Red" TextAlignment="Left" Margin="10" >Recherche d'un compte</TextBlock>
 
-        <TextBlock  Name="MailTextRech" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="Description"> Mail</TextBlock>
-        <TextBox Name="MailBoxRech" Text="{Binding MailBoxRech, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True"  ></TextBox>
-        <Button Name="ButtonMailRecherche" Command="{Binding BtnMailRecherche}" RelativePanel.AlignHorizontalCenterWithPanel="True">Rechercher</Button>
+        <TextBlock  Name="MailTextRech"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="Description" Margin="-58.667,7,78,13" RenderTransformOrigin="-1.782,0.7"> Mail</TextBlock>
+        <TextBox Name="MailBoxRech" Text="{Binding MailBoxRech, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="MailTextRech" Margin="-56.333,41,76.333,-21" ></TextBox>
+        <Button Name="ButtonMailRecherche" Command="{Binding BtnMailRecherche}" RelativePanel.AlignHorizontalCenterWithPanel="True"  RelativePanel.RightOf="MailBoxRech" Margin="-66,41,0,-21">Rechercher</Button>
         
         
-        <TextBlock  Name="NomText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="ButtonMailRecherche" Margin="10"> Nom</TextBlock>
+        <TextBlock  Name="NomText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="MailTextRech" Margin="10"> Nom</TextBlock>
         <TextBox Name="NomBox" Text="{Binding Compte.CPT_NOM, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="NomText" ></TextBox>
 
 

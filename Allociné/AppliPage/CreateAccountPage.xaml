@@ -25,7 +25,10 @@
         <TextBlock  Name="MailText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PortableBox" > Mail</TextBlock>
         <TextBox Name="MailBox" Text="{Binding Compte.CPT_MEL, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="MailText"></TextBox>
 
-        <TextBlock  Name="RueText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="MailBox" > Adresse : Rue</TextBlock>
+        <TextBlock  Name="PasswordText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="MailBox" > Password </TextBlock>
+        <PasswordBox Name="Password" PasswordChar="*" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PasswordText" PlaceholderText="Enter your password"/>
+
+        <TextBlock  Name="RueText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="Password" > Adresse : Rue</TextBlock>
         <TextBox Name="RueBox" Text="{Binding Compte.CPT_RUE, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="RueText"></TextBox>
         <TextBlock  Name="CPText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="RueBox" > Code Postal</TextBlock>
         <TextBox Name="CPBox" Text="{Binding Compte.CPT_CP, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="CPText"></TextBox>
@@ -34,13 +37,8 @@
         <TextBlock  Name="PaysText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="VilleBox" > Pays</TextBlock>
         <TextBox Name="PaysBox" Text="{Binding Compte.CPT_PAYS, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PaysText"></TextBox>
 
-        <CommandBar x:Name="AppCommandBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
-            <CommandBar.PrimaryCommands>
-                <AppBarButton Name="Save" Icon="Save" Label="Save" Command="{Binding BtnModifyCompteCommand}"></AppBarButton>
-                <AppBarButton Name="Clear" Icon="ClearSelection" Label="Clear" Command="{Binding BtnClearCompteCommand}"></AppBarButton>
-                <AppBarButton Name="Add" Icon="Add" Label="Add" Command="{Binding BtnAddCompteCommand}"></AppBarButton>
-            </CommandBar.PrimaryCommands>
-        </CommandBar>
+        <Button Name="ButtonCreateAccount" Command="{Binding BtnCreateAccount}" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PaysBox" Margin="10" >Créer</Button>
+
     </RelativePanel>
 
 </Page>

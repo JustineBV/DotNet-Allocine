@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Allociné.Model;
-
+using Windows.UI.Popups;
 
 namespace Allociné.Service
 {
@@ -45,14 +45,20 @@ namespace Allociné.Service
             }
 
 
-            public async void PostCompteAsync(T_E_COMPTE_CPT cptNew)
+            public async Task<T_E_COMPTE_CPT> PostCompteAsync(T_E_COMPTE_CPT cptNew)
             {
-                HttpResponseMessage response = await client.PostAsJsonAsync("",cptNew);
-                if (response.IsSuccessStatusCode)
+                try
                 {
-                    await response.Content.ReadAsAsync<T_E_COMPTE_CPT>();
+                    HttpResponseMessage response = await client.PostAsJsonAsync("Compte/", cptNew);
                 }
-            }
+                catch(Exception e)
+                {   
+                    var messageDialog = new MessageDialog("Problème lors de l'ajout de l'utilisateur");
+                    await messageDialog.ShowAsync();
+                }
+                return cptNew;
+
+        }
 
 
     }
