@@ -43,7 +43,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="ButtonParametre" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
                         Width="50" Height="50" Background="Transparent" Click="ButtonParametre_Click" />
-                    <TextBlock Text="Parametre" Foreground="White" FontSize="18" VerticalAlignment="Center" />
+                    <TextBlock Text="Paramètre" Foreground="White" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
 
             </StackPanel>

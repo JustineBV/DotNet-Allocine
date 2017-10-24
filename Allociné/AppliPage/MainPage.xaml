@@ -7,8 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Image Source="http://www.business-actor.com/wp-content/uploads/2013/07/logo-allocine.png"></Image>
-        
-    </Grid>
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Name="MyAlloText" Text="My Allociné" FontSize="30" Foreground="Yellow" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" />
+        <Image Source="http://www.business-actor.com/wp-content/uploads/2013/07/logo-allocine.png" RelativePanel.Below="MyAlloText" Margin="15"></Image>        
+    </RelativePanel>
 </Page>

@@ -47,7 +47,7 @@ namespace Allociné
                 }
 
                 // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
+                Window.Current.Content = new RootPage(rootFrame);
             }
 
             if (e.PrelaunchActivated == false)

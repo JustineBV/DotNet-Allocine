@@ -42,6 +42,10 @@ namespace Allociné.AppliPage
         private void ButtonPrecedent_Click(object sender, RoutedEventArgs e)
         {
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+            Frame myFrame = this.MySplitView.Content as Frame;
+            if (myFrame.CanGoBack) {
+                myFrame.GoBack();
+            }
         }
 
         private void ButtonHome_Click(object sender, RoutedEventArgs e)
@@ -57,6 +61,7 @@ namespace Allociné.AppliPage
         private void ButtonCompte_Click(object sender, RoutedEventArgs e)
         {
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+            (MySplitView.Content as Frame).Navigate(typeof(ComptePage));
         }
 
         private void ButtonParametre_Click(object sender, RoutedEventArgs e)
