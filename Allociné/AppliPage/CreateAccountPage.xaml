@@ -26,7 +26,7 @@
         <TextBox Name="MailBox" Text="{Binding Compte.CPT_MEL, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="MailText"></TextBox>
 
         <TextBlock  Name="PasswordText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="MailBox" > Password </TextBlock>
-        <PasswordBox Name="Password" PasswordChar="*" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PasswordText" PlaceholderText="Enter your password"/>
+        <PasswordBox Name="Password" Password="{Binding PasswordValue, Mode=TwoWay}"  PasswordChar="*" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PasswordText" PlaceholderText="Enter your password"/>
 
         <TextBlock  Name="RueText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="Password" > Adresse : Rue</TextBlock>
         <TextBox Name="RueBox" Text="{Binding Compte.CPT_RUE, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="RueText"></TextBox>

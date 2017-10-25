@@ -58,7 +58,22 @@ namespace Allociné.Service
                 }
                 return cptNew;
 
-        }
+            }
+
+            public async Task<T_E_COMPTE_CPT> PutCompteAsync(int id, T_E_COMPTE_CPT cptUpadted)
+            {
+                try
+                {
+                    HttpResponseMessage response = await client.PutAsJsonAsync(string.Concat("Compte/", id), cptUpadted);
+                }
+                catch (Exception e)
+                {
+                    var messageDialog = new MessageDialog("Problème lors de la modification de l'utilisateur");
+                    await messageDialog.ShowAsync();
+                }
+                return cptUpadted;
+
+            }
 
 
     }

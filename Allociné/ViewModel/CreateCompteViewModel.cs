@@ -33,7 +33,7 @@ namespace Allociné.ViewModel
             }
         }
 
-        public string Password
+        public string PasswordValue
         {
             [SecurityCriticalAttribute]
             get { return PasswordChp; }

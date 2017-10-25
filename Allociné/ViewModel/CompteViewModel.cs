@@ -85,10 +85,10 @@ namespace Allociné.ViewModel
 
         private async void ActionModifyCompteCommand()
         {
-            // A FAIRE !!!!
             WSService wsService = WSService.GetInstance();
             try
             {
+                Compte = await wsService.PutCompteAsync(_cpt.CPT_ID, _cpt);
             }
             catch (Exception e)
             {
@@ -97,18 +97,10 @@ namespace Allociné.ViewModel
             }
         }
 
-        private async void ActionClearCompteCommand()
+        
+        private void ActionClearCompteCommand()
         {
-            // A FAIRE !!!!
-            WSService wsService = WSService.GetInstance();
-            try
-            {
-            }
-            catch (Exception e)
-            {
-                var messageDialog = new MessageDialog("Pas de connexion au webService concerné");
-                await messageDialog.ShowAsync();
-            }
+            _cpt = null;
         }
 
         private void ActionAddCompteCommand()
