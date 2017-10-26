@@ -88,7 +88,7 @@ namespace Allociné.ViewModel
             WSService wsService = WSService.GetInstance();
             try
             {
-                Compte = await wsService.PutCompteAsync(_cpt.CPT_ID, _cpt);
+                Compte = await wsService.PutCompteAsync(_cpt.CPT_ID, _cpt);                
             }
             catch (Exception e)
             {
@@ -100,7 +100,7 @@ namespace Allociné.ViewModel
         
         private void ActionClearCompteCommand()
         {
-            _cpt = null;
+            Compte = null;
         }
 
         private void ActionAddCompteCommand()
