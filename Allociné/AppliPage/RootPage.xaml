@@ -17,7 +17,7 @@
                     Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
                 
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="ButtonPrecedent" FontFamily="Segoe MDL2 Assets" Content="&#xE825;"
+                    <Button x:Name="ButtonPrecedent" FontFamily="Segoe MDL2 Assets" Content="&#xE72B;"
                     Width="50" Height="50" Background="Transparent" Click="ButtonPrecedent_Click"/>
                     <TextBlock Text="Précédent" Foreground="White" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
@@ -29,19 +29,19 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="ButtonFilms" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
+                    <Button x:Name="ButtonFilms" FontFamily="Segoe MDL2 Assets" Content="&#xE714;"
                         Width="50" Height="50" Background="Transparent" Click="ButtonFilms_Click" />
                     <TextBlock Text="Films" Foreground="White" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="ButtonCompte" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
+                    <Button x:Name="ButtonCompte" FontFamily="Segoe MDL2 Assets" Content="&#xE716;"
                         Width="50" Height="50" Background="Transparent" Click="ButtonCompte_Click" />
                     <TextBlock Text="Compte" Foreground="White" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="ButtonParametre" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
+                    <Button x:Name="ButtonParametre" FontFamily="Segoe MDL2 Assets" Content="&#xE713;"
                         Width="50" Height="50" Background="Transparent" Click="ButtonParametre_Click" />
                     <TextBlock Text="Paramètre" Foreground="White" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>

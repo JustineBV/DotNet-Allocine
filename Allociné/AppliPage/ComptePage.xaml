@@ -5,49 +5,71 @@
     xmlns:local="using:Allociné.AppliPage"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
     mc:Ignorable="d"
     DataContext="{Binding Compte, Source={StaticResource Locator}}"
     >
 
 
-    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20">
-        <TextBlock Name="Description" Foreground="Red" TextAlignment="Left" Margin="10" >Recherche d'un compte</TextBlock>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20">
 
-        <TextBlock  Name="MailTextRech"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="Description" Margin="-58.667,7,78,13" RenderTransformOrigin="-1.782,0.7"> Mail</TextBlock>
-        <TextBox Name="MailBoxRech" Text="{Binding MailBoxRech, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="MailTextRech" Margin="-56.333,41,76.333,-21" ></TextBox>
-        <Button Name="ButtonMailRecherche" Command="{Binding BtnMailRecherche}" RelativePanel.AlignHorizontalCenterWithPanel="True"  RelativePanel.RightOf="MailBoxRech" Margin="-66,41,0,-21">Rechercher</Button>
-        
-        
-        <TextBlock  Name="NomText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="MailTextRech" Margin="10"> Nom</TextBlock>
-        <TextBox Name="NomBox" Text="{Binding Compte.CPT_NOM, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="NomText" ></TextBox>
+            <TextBlock Name="Description" Foreground="Red" TextAlignment="Left" Margin="10" >Recherche d'un compte</TextBlock>
+
+            <TextBlock  Name="MailTextRech"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="Description" Margin="-58.667,7,78,13" RenderTransformOrigin="-1.782,0.7"> Mail</TextBlock>
+            <TextBox Name="MailBoxRech" Text="{Binding MailBoxRech, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="MailTextRech" Margin="-56.333,41,76.333,-21" ></TextBox>
+            <Button Name="ButtonMailRecherche" Command="{Binding BtnMailRecherche}" RelativePanel.AlignHorizontalCenterWithPanel="True"  RelativePanel.RightOf="MailBoxRech" Margin="-66,41,0,-21">Rechercher</Button>
 
 
-        <TextBlock  Name="PrenomText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="NomBox" > Prenom</TextBlock>
-        <TextBox Name="PrenomBox" Text="{Binding Compte.CPT_PRENOM, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PrenomText" ></TextBox>
+            <TextBlock  Name="NomText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="MailTextRech" Margin="10"> Nom</TextBlock>
+            <TextBox Name="NomBox" Text="{Binding Compte.CPT_NOM, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="NomText" RelativePanel.Below="MailTextRech"></TextBox>
 
-        <TextBlock  Name="PortableText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PrenomBox" > Portable</TextBlock>
-        <TextBox Name="PortableBox" Text="{Binding Compte.CPT_TELPORTABLE , Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PortableText" ></TextBox>
+            <TextBlock  Name="PrenomText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="NomText" Margin="10"> Prenom</TextBlock>
+            <TextBox Name="PrenomBox" Text="{Binding Compte.CPT_PRENOM, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="PrenomText" RelativePanel.Below="NomText"></TextBox>
 
-        <TextBlock  Name="MailText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PortableBox" > Mail</TextBlock>
-        <TextBox Name="MailBox" Text="{Binding Compte.CPT_MEL, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="MailText"></TextBox>
+            <TextBlock  Name="PortableText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PrenomText" Margin="10"> Portable</TextBlock>
+            <TextBox Name="PortableBox" Text="{Binding Compte.CPT_TELPORTABLE , Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="PortableText" RelativePanel.Below="PrenomText"></TextBox>
 
-        <TextBlock  Name="RueText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="MailBox" > Adresse : Rue</TextBlock>
-        <TextBox Name="RueBox" Text="{Binding Compte.CPT_RUE, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="RueText"></TextBox>
-        <TextBlock  Name="CPText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="RueBox" > Code Postal</TextBlock>
-        <TextBox Name="CPBox" Text="{Binding Compte.CPT_CP, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="CPText"></TextBox>
-        <TextBlock  Name="VilleText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="CPBox" > Ville</TextBlock>
-        <TextBox Name="VilleBox" Text="{Binding Compte.CPT_VILLE, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="VilleText"></TextBox>
-        <TextBlock  Name="PaysText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="VilleBox" > Pays</TextBlock>
-        <TextBox Name="PaysBox" Text="{Binding Compte.CPT_PAYS, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PaysText"></TextBox>
+            <TextBlock  Name="MailText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="PortableText" Margin="10" > Mail</TextBlock>
+            <TextBox Name="MailBox" Text="{Binding Compte.CPT_MEL, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="MailText" RelativePanel.Below="PortableText"></TextBox>
 
-        <CommandBar x:Name="AppCommandBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
-            <CommandBar.PrimaryCommands>
-                <AppBarButton Name="Save" Icon="Save" Label="Save" Command="{Binding BtnModifyCompteCommand}"></AppBarButton>
-                <AppBarButton Name="Clear" Icon="ClearSelection" Label="Clear" Command="{Binding BtnClearCompteCommand}"></AppBarButton>
-                <AppBarButton Name="Add" Icon="Add" Label="Add" Command="{Binding BtnAddCompteCommand}"></AppBarButton>
-            </CommandBar.PrimaryCommands>
-        </CommandBar>
-    </RelativePanel>
+            <TextBlock  Name="RueText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="MailText" Margin="10" > Rue</TextBlock>
+            <TextBox Name="RueBox" Text="{Binding Compte.CPT_RUE, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="RueText" RelativePanel.Below="MailText"></TextBox>
+            <TextBlock  Name="CPText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="RueText" Margin="10"> Code Postal</TextBlock>
+            <TextBox Name="CPBox" Text="{Binding Compte.CPT_CP, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="CPText" RelativePanel.Below="RueText"></TextBox>
+            <TextBlock  Name="VilleText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="CPText" Margin="10"> Ville</TextBlock>
+            <TextBox Name="VilleBox" Text="{Binding Compte.CPT_VILLE, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="VilleText" RelativePanel.Below="CPText"></TextBox>
+            <TextBlock  Name="PaysText" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="VilleText" Margin="10"> Pays</TextBlock>
+            <TextBox Name="PaysBox" Text="{Binding Compte.CPT_PAYS, Mode=TwoWay}"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="PaysText" RelativePanel.Below="VilleText"></TextBox>
 
+
+            <Grid RelativePanel.Below="PaysText" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"  RelativePanel.AlignBottomWithPanel="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Maps:MapControl Name="Map"  MapServiceToken=""  ZoomInteractionMode="GestureAndControl"  LandmarksVisible="True" IsRightTapEnabled="true"           
+                                 Center="{Binding MapCenter, Mode=TwoWay}" ZoomLevel="15"  Grid.ColumnSpan="2"   Grid.RowSpan="2"  Grid.Row="2">
+                    <Maps:MapItemsControl>
+                        <TextBox Text="{Binding PushpinName, Mode=TwoWay}" Maps:MapControl.Location="{Binding Pushpin, Mode=TwoWay}"/>
+                    </Maps:MapItemsControl>
+                </Maps:MapControl>
+            </Grid>
+
+
+            <CommandBar x:Name="AppCommandBar" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                <CommandBar.PrimaryCommands>
+                    <AppBarButton Name="Save" Icon="Save" Label="Save" Command="{Binding BtnModifyCompteCommand}"></AppBarButton>
+                    <AppBarButton Name="Clear" Icon="ClearSelection" Label="Clear" Command="{Binding BtnClearCompteCommand}"></AppBarButton>
+                    <AppBarButton Name="Add" Icon="Add" Label="Add" Command="{Binding BtnAddCompteCommand}"></AppBarButton>
+                </CommandBar.PrimaryCommands>
+            </CommandBar>
+       </RelativePanel>
+
+    </ScrollViewer>
 
 </Page>

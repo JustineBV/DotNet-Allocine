@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.Devices.Geolocation;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -25,6 +26,9 @@ namespace Allociné.ViewModel
 
         private string _mailBoxRech;
         private T_E_COMPTE_CPT _cpt;
+        private Geopoint _mapCenter;
+        private Geopoint _pushpin;
+        private string _pushpinName;
 
 
         public string MailBoxRech
@@ -47,9 +51,24 @@ namespace Allociné.ViewModel
             }
         }
 
+        public Geopoint MapCenter {
+            get { return _mapCenter; }
+            set { _mapCenter = value; RaisePropertyChanged(); }
+
+       }
+
+        public Geopoint Pushpin {
+            get { return _pushpin; }
+            set { _pushpin = value; RaisePropertyChanged(); }
+        }
+
+        public string PushpinName {
+            get { return _pushpinName; }
+            set { _pushpinName = value; RaisePropertyChanged(); }
+        }
 
 
-
+        /******* END OF PROPERTIES ****/
 
         /// <summary>
         /// Constructeur sans paramètre
@@ -111,7 +130,22 @@ namespace Allociné.ViewModel
         }
 
 
-
-
+        private async void setPhonePosition()
+        {
+            try
+            {
+                Geolocator geolocator = new Geolocator();
+                Geoposition geoposition = null;
+                geoposition = await geolocator.GetGeopositionAsync();
+                MapCenter = geoposition.Coordinate.Point;
+                Pushpin = MapCenter;
+                // Le pushpin (POI) a la meme localisation que MapCenter, mais on n'est pas obligé.                 
+                PushpinName = "Ma position";
+            }
+            catch (Exception e) {
+                var messageDialog = new MessageDialog("Problème de géolocalisation");
+                await messageDialog.ShowAsync();
+            }
+        }
     }
 }
